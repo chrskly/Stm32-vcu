@@ -643,8 +643,10 @@ static void Ms10Task(void) {
 
   selectedInverter->SetTorque(torquePercent);
 
-  if (Param::GetInt(Param::potnom) < Param::GetInt(Param::RegenBrakeLight)) {
-    // enable Brake Light Ouput
+  // Brake light comes on for the physical brake signal (pedal switch or the
+  // CAN_IO_BRAKE bit) as well as for regen deeper than RegenBrakeLight
+  if (Param::GetBool(Param::din_brake) ||
+      Param::GetInt(Param::potnom) < Param::GetInt(Param::RegenBrakeLight)) {
     IOMatrix::GetPinOut(IOMatrix::BRAKELIGHT)->Set();
   } else {
     IOMatrix::GetPinOut(IOMatrix::BRAKELIGHT)->Clear();
