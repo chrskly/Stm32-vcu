@@ -506,7 +506,7 @@ enum vehicles {
   vBMW_E46 = 0,
   vBMW_E65 = 1,
   Classic = 2, // used as a flag
-  None = 4,
+  None = 3,
   vBMW_E39 = 5,
   vVAG = 6,
   vSUBARU = 7,
