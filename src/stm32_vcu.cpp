@@ -41,6 +41,7 @@
 #include "JLR_G1.h"
 #include "JLR_G2.h"
 #include "MGCoolantHeater.h"
+#include "MGgen1charger.h"
 #include "MGgen2V2Lcharger.h"
 #include "Maintainer12V.h"
 #include "NissanPDM.h"
@@ -171,6 +172,7 @@ static extCharger chgdigi;
 static amperaCharger ampChg;
 static outlanderCharger outChg;
 static MGgen2V2Lcharger MGgen2v2l;
+static MGgen1charger MGgen1chg;
 static C5Charger c5Chg;
 static FCChademo chademoFC;
 static i3LIMClass LIMFC;
@@ -1047,6 +1049,9 @@ static void UpdateCharger() {
     break;
   case ChargeModes::C5_PTECAN:
     selectedCharger = &c5Chg;
+    break;
+  case ChargeModes::MGgen1:
+    selectedCharger = &MGgen1chg;
     break;
   }
   // This will call SetCanFilters() via the Clear Callback
