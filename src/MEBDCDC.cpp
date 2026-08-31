@@ -217,5 +217,4 @@ void MEBDCDC::DeInit() {
   udsPollTick = 0;
   udsEverSeen = false;
   udsSilenceTicks = 0;
-  Param::SetInt(Param::DcdcUdsAlive, 0);
 }
