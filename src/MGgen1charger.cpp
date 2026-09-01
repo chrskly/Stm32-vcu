@@ -55,7 +55,6 @@ void MGgen1charger::DecodeCAN(int id, uint32_t data[2]) {
 
   Param::SetFloat(Param::AC_Volts, acVolts);
   Param::SetFloat(Param::AC_Amps, acAmps);
-  Param::SetInt(Param::ChgCpDuty, cpDuty);
 }
 
 bool MGgen1charger::ControlCharge(bool RunCh, bool ACReq) {
