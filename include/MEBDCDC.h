@@ -51,8 +51,10 @@ private:
   void SendBms04();
   void SendUdsPing();
   void DecodeUdsResponse(const uint8_t *data);
-  static uint8_t Crc8H2F(const uint8_t *data, uint8_t length, uint8_t init, uint8_t finalXor);
-  static uint8_t VagCrc(const uint8_t *frame, uint8_t length, const uint8_t *pduConst);
+  static uint8_t Crc8H2F(const uint8_t *data, uint8_t length, uint8_t init,
+                         uint8_t finalXor);
+  static uint8_t VagCrc(const uint8_t *frame, uint8_t length,
+                        const uint8_t *pduConst);
   uint8_t counter = 0;
   uint8_t tick = 0;
   uint8_t udsPollTick = 0;
